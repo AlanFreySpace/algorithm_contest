@@ -30,4 +30,5 @@ int main(){
 		b[12]=c;
 		cout<<b;
 	}
+	return 0; 
 }
