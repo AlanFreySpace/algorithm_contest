@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include <algorithm> //transformº¯ÊıĞèÒªÓÃµÄÍ·ÎÄ¼ş 
+#include <algorithm> //transformå‡½æ•°éœ€è¦ç”¨çš„å¤´æ–‡ä»¶ 
 using namespace std;
 
 //https://www.csdn.net/gather_23/NtDagg2sNjItYmxvZwO0O0OO0O0O.html
@@ -16,13 +16,13 @@ int main(){
 	for(int i=0;i<n;i++){
 		cin>>inputS[i];
 		convertS[i]=inputS[i];
-		string::size_type st;//ÓÃÓÚÍ³¼Æ×Ö·û´®aÖĞÊÇ·ñ³öÏÖÄ³×Ö·û´®bĞèÒªÓÃµ½µÄ(Çø·Ö´óĞ¡Ğ´)Á¿ 
+		string::size_type st;//ç”¨äºç»Ÿè®¡å­—ç¬¦ä¸²aä¸­æ˜¯å¦å‡ºç°æŸå­—ç¬¦ä¸²béœ€è¦ç”¨åˆ°çš„(åŒºåˆ†å¤§å°å†™)é‡ 
 		if(a==1){
-			//findº¯Êı·µ»Ø³öÏÖ×Ö·û´®b³öÏÖµÄÊ×Î»ÖÃ 
-			st=inputS[i].find(s);//ÓÃÓÚÍ³¼Æ×Ö·û´®aÖĞÊÇ·ñ³öÏÖÄ³×Ö·û´®bĞèÒªÓÃµ½µÄ(Çø·Ö´óĞ¡Ğ´)º¯Êıfind  
-			if(st!=string::npos) exists[i]=1;//Èôst==string::npos±íÃ÷Î´ÕÒµ½ 
+			//findå‡½æ•°è¿”å›å‡ºç°å­—ç¬¦ä¸²bå‡ºç°çš„é¦–ä½ç½® 
+			st=inputS[i].find(s);//ç”¨äºç»Ÿè®¡å­—ç¬¦ä¸²aä¸­æ˜¯å¦å‡ºç°æŸå­—ç¬¦ä¸²béœ€è¦ç”¨åˆ°çš„(åŒºåˆ†å¤§å°å†™)å‡½æ•°find  
+			if(st!=string::npos) exists[i]=1;//è‹¥st==string::nposè¡¨æ˜æœªæ‰¾åˆ° 
 		}else{
-			//²»Çø·Ö´óĞ¡Ğ´Ê±µÄ²ßÂÔ£¬ÒıÈëconvert³£Á¿£¬Ê¹ÓÃtransform½«×Ö·û´®×ª»»Îª¶¼ÊÇĞ¡Ğ´ 
+			//ä¸åŒºåˆ†å¤§å°å†™æ—¶çš„ç­–ç•¥ï¼Œå¼•å…¥convertï¼Œä½¿ç”¨transformå°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºéƒ½æ˜¯å°å†™ 
 			transform(convertS[i].begin(),convertS[i].end(),convertS[i].begin(),::tolower);
 			transform(s.begin(),s.end(),s.begin(),::tolower);
 			st=convertS[i].find(s);
