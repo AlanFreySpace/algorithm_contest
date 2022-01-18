@@ -1,0 +1,15 @@
+package test;
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class t1475 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n;
+		BigInteger a,b;
+		n=sc.nextInt();
+		a=sc.nextBigInteger();
+		b=sc.nextBigInteger();
+		System.out.println(c=a.multiply(b));
+	}
+}

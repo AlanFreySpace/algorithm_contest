@@ -1,0 +1,18 @@
+package test;
+import java.math.BigInteger;
+import java.util.Scanner;
+/*
+ * Java高精度计算
+ */
+public class t2 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		while(sc.hasNext()) {
+			BigInteger a=sc.nextBigInteger();
+			BigInteger b=sc.nextBigInteger();
+			BigInteger c=a.add(b);
+			System.out.println(c);
+		}
+		sc.close();
+	}
+}
