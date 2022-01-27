@@ -5,7 +5,7 @@ using namespace std;
 
 #define eps 1.e-8
 
-pair<double, double> g[505];//º””Õ’æ
+pair<double, double> g[505];//Âä†Ê≤πÁ´ô
 
 int main() {
     double cmax, d, davg;
@@ -41,14 +41,12 @@ int main() {
                             cost += (need * q.front().first);
                             q.front().second -= need;
                             need = 0.;
-                            //printf("%lf\n", cost);
                         }
                         else {
                             oil -= tmp;
                             cost += (tmp * q.front().first);
                             need -= tmp;
                             q.pop_front();
-                            //printf("%lf\n", cost);
                         }
                     }
 
@@ -65,8 +63,6 @@ int main() {
                     if (i == n-1) printf("%.2lf\n", cost);
                 }
             }
-            //printf("%lf\n", cost);
-            //printf("%lf\n", sumDis);
         }
     }
     return 0;
