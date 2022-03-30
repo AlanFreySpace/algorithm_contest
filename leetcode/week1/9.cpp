@@ -1,14 +1,14 @@
-//·½·¨Ò»
+//æ–¹æ³•ä¸€
 class Solution {
 public:
     bool isPalindrome(int x) {
         if(x<0) return 0;
         string s=to_string(x);
-        return s==string(s.rbegin(),s.rend());//·´×ª×Ö·û´® ·´Ïòµü´úÆ÷
+        return s==string(s.rbegin(),s.rend());//åè½¬å­—ç¬¦ä¸² åå‘è¿­ä»£å™¨
     }
 };
 
-//·½·¨¶þ ÊýÖµ·½·¨
+//æ–¹æ³•äºŒ æ•°å€¼æ–¹æ³•
 class Solution {
 public:
     bool isPalindrome(int x) {

@@ -1,13 +1,13 @@
 class Solution {
 public:
-    string longestPalindrome(string s) {//ÀûÓÃÖ¸ÕëÃ¶¾ÙÖĞĞÄ ¸´ÔÓ¶ÈO(n^2)
+    string longestPalindrome(string s) {//åˆ©ç”¨æŒ‡é’ˆæšä¸¾ä¸­å¿ƒ å¤æ‚åº¦O(n^2)
         string res;
-        for(int i=0;i<s.size();i++){//Ã¶¾ÙÖĞĞÄµã
-            int l=i-1,r=i+1;//³¤¶ÈÎªÆæÊıµÄ»ØÎÄ´®
+        for(int i=0;i<s.size();i++){//æšä¸¾ä¸­å¿ƒç‚¹
+            int l=i-1,r=i+1;//é•¿åº¦ä¸ºå¥‡æ•°çš„å›æ–‡ä¸²
             while(l>=0&&r<s.size()&&s[l]==s[r]) l--,r++;
-            if(res.size()<r-l-1) res=s.substr(l+1,r-l-1);//×¢ÒâsubstrµÄµ÷ÓÃ·½·¨
+            if(res.size()<r-l-1) res=s.substr(l+1,r-l-1);//æ³¨æ„substrçš„è°ƒç”¨æ–¹æ³•
 
-            l=i,r=i+1;//³¤¶ÈÎªÅ¼ÊıµÄ»ØÎÄ´®
+            l=i,r=i+1;//é•¿åº¦ä¸ºå¶æ•°çš„å›æ–‡ä¸²
             while(l>=0&&r<s.size()&&s[l]==s[r]) l--,r++;
             if(res.size()<r-l-1) res=s.substr(l+1,r-l-1);
         }

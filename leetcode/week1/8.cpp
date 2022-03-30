@@ -2,20 +2,20 @@ class Solution {
 public:
     int myAtoi(string s) {
         int k=0;
-        //È¥µôÇ°µ¼¿Õ¸ñ
+        //å»æ‰å‰å¯¼ç©ºæ ¼
         for(int i=0;i<s.size()&&s[i]==' ';i++) k++;
         if(k==s.size()) return 0;
-        //¶ÁÈëÕı¸ººÅ ×¢ÒâÖ»ÄÜ¶ÁÈ¡Ò»¸öÕı¸ººÅ ËùÒÔÓÃelse if
+        //è¯»å…¥æ­£è´Ÿå· æ³¨æ„åªèƒ½è¯»å–ä¸€ä¸ªæ­£è´Ÿå· æ‰€ä»¥ç”¨else if
         int minus=1;
         if(s[k]=='-') minus=-1,k++;
         else if(s[k]=='+') k++;
-        //¶ÁÈ¡Êı×Ö
+        //è¯»å–æ•°å­—
         int res=0;
         while(k<s.size()&&s[k]>='0'&&s[k]<='9'){
             int x=s[k]-'0';
             if(minus==1&&res>(INT_MAX-x)/10) return INT_MAX;
             if(minus==-1&&-res<(INT_MIN+x)/10) return INT_MIN;
-            //ÓÉÓÚres´æµÄÊÇÊı×Ö¾ø¶ÔÖµ INT×îĞ¡Öµ±È×î´óÖµµÄ¾ø¶ÔÖµ´ó1 ËùÒÔĞèÒªÌØÅĞ
+            //ç”±äºreså­˜çš„æ˜¯æ•°å­—ç»å¯¹å€¼ INTæœ€å°å€¼æ¯”æœ€å¤§å€¼çš„ç»å¯¹å€¼å¤§1 æ‰€ä»¥éœ€è¦ç‰¹åˆ¤
             if(minus==-1&&-res*10-x==INT_MIN) return INT_MIN;
             res=res*10+x;
             k++;

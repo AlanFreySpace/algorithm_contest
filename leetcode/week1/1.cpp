@@ -1,7 +1,7 @@
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {//O(n)Ëã·¨
-        unordered_map<int,int> m; //<Êý×Ö,ÏÂ±ê>¹þÏ£±í
+    vector<int> twoSum(vector<int>& nums, int target) {//O(n)ç®—æ³•
+        unordered_map<int,int> m; //<æ•°å­—,ä¸‹æ ‡>å“ˆå¸Œè¡¨
         for(int i=0;i<nums.size();i++){
             int r=target-nums[i];
             if(m.count(r)) return {m[r],i};

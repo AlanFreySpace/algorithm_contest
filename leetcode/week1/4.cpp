@@ -5,13 +5,13 @@ public:
         if(tot%2==0){
             int left=find(nums1,0,nums2,0,tot/2);
             int right=find(nums1,0,nums2,0,tot/2+1);
-            return (left+right)/2.0;//×¢ÒâÓ¦³ıÒÔ2.0ÒÔÈ·±£ÊÇdouble
+            return (left+right)/2.0;//æ³¨æ„åº”é™¤ä»¥2.0ä»¥ç¡®ä¿æ˜¯double
         }
         else return find(nums1,0,nums2,0,tot/2+1);
     }
     /*
-    ²éÕÒnums1[i,nums1.size()-1]ºÍnums2[j,nums2.size()-1]ÖĞµÚk(k´Ó1¿ªÊ¼)´óµÄÔªËØ
-    ÆäÖĞnums1Êı×éËùº¬ÔªËØ×ÜÊÇÉÙÒ»Ğ©,Òò´Ë¸ÃÊı×éÖĞÔªËØ¿ÉÄÜÔ½½ç,Ğè½øĞĞ±ß½ç´¦Àí
+    æŸ¥æ‰¾nums1[i,nums1.size()-1]å’Œnums2[j,nums2.size()-1]ä¸­ç¬¬k(kä»1å¼€å§‹)å¤§çš„å…ƒç´ 
+    å…¶ä¸­nums1æ•°ç»„æ‰€å«å…ƒç´ æ€»æ˜¯å°‘ä¸€äº›,å› æ­¤è¯¥æ•°ç»„ä¸­å…ƒç´ å¯èƒ½è¶Šç•Œ,éœ€è¿›è¡Œè¾¹ç•Œå¤„ç†
     */
     int find(vector<int>& nums1,int i,vector<int>& nums2,int j,int k){
         if(nums1.size()-i>nums2.size()-j) return find(nums2,j,nums1,i,k);
@@ -20,7 +20,7 @@ public:
             else return min(nums1[i],nums2[j]);
         }
         if(nums1.size()==i) return nums2[j+k-1];
-        //×¢ÒâÒª¼Ó(int)×ªÎª³£Êı ×¢ÒâsiµÄ¶¨ÒåÊÇÎªÁË·ÀÖ¹Òç³ö ÒòÎªnums1Êı×éº¬µÄÔªËØ×ÜÊÇÉÙĞ©
+        //æ³¨æ„è¦åŠ (int)è½¬ä¸ºå¸¸æ•° æ³¨æ„siçš„å®šä¹‰æ˜¯ä¸ºäº†é˜²æ­¢æº¢å‡º å› ä¸ºnums1æ•°ç»„å«çš„å…ƒç´ æ€»æ˜¯å°‘äº›
         int si=min(i+k/2,(int)nums1.size()),sj=j+k-k/2;
         if(nums1[si-1]<nums2[sj-1])
             return find(nums1,si,nums2,j,k-(si-i));

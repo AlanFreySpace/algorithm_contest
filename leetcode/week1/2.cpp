@@ -11,8 +11,8 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        auto dummy=new ListNode(-1),cur=dummy;//ÐéÄâÍ·½Úµã ·½±ã²Ù×÷
-        int t=0;//±íÊ¾½øÎ»
+        auto dummy=new ListNode(-1),cur=dummy;//è™šæ‹Ÿå¤´èŠ‚ç‚¹ æ–¹ä¾¿æ“ä½œ
+        int t=0;//è¡¨ç¤ºè¿›ä½
         while(l1||l2||t){
             if(l1) t+=l1->val,l1=l1->next;
             if(l2) t+=l2->val,l2=l2->next;

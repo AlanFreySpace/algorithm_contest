@@ -1,12 +1,12 @@
 class Solution {
 public:
-    string convert(string s, int n) {//ÕÒ¹æÂÉÌâ
-        if(n==1) return s;//×¢ÒânÎª1Ê±ÒªÌØÅĞ ·ñÔò»áËÀÑ­»·
+    string convert(string s, int n) {//æ‰¾è§„å¾‹é¢˜
+        if(n==1) return s;//æ³¨æ„nä¸º1æ—¶è¦ç‰¹åˆ¤ å¦åˆ™ä¼šæ­»å¾ªç¯
         string res;
         for(int i=0;i<n;i++){
-            if(i==0||i==n-1){//µÚÒ»ĞĞºÍ×îºóÒ»ĞĞÊÇÒ»¸öµÈ²îÊıÁĞ
+            if(i==0||i==n-1){//ç¬¬ä¸€è¡Œå’Œæœ€åä¸€è¡Œæ˜¯ä¸€ä¸ªç­‰å·®æ•°åˆ—
                 for(int j=i;j<s.size();j+=(2*n-2)) res+=s[j];
-            }else{//ÆäËüĞĞÊÇÁ½¸öµÈ²îÊıÁĞµÄ½»´í
+            }else{//å…¶å®ƒè¡Œæ˜¯ä¸¤ä¸ªç­‰å·®æ•°åˆ—çš„äº¤é”™
                 for(int j=i,k=2*n-i-2;j<s.size()||k<s.size();j+=(2*n-2),k+=(2*n-2)){
                     if(j<s.size()) res+=s[j];
                     if(k<s.size()) res+=s[k];

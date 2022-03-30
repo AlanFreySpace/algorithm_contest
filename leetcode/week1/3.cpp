@@ -1,14 +1,14 @@
 class Solution {
 public:
-    int lengthOfLongestSubstring(string s) {//Ë«Ö¸Õë »¬¶¯´°¿ÚËã·¨ O(n)Ê±¼ä¸´ÔÓ¶È
+    int lengthOfLongestSubstring(string s) {//åŒæŒ‡é’ˆ æ»‘åŠ¨çª—å£ç®—æ³• O(n)æ—¶é—´å¤æ‚åº¦
         unordered_map<char,int> m;
         int res=0;
         /*
-        ¼ÆËãÒÔs[i]½áÎ²µÄ²»º¬ÖØ¸´×Ö·û×Ó´®µÄ×î´ó³¤¶È
+        è®¡ç®—ä»¥s[i]ç»“å°¾çš„ä¸å«é‡å¤å­—ç¬¦å­ä¸²çš„æœ€å¤§é•¿åº¦
         */
-        for(int i=0,j=0;i<s.size();i++){//iÊÇÓÒÖ¸Õë jÊÇ×óÖ¸Õë
+        for(int i=0,j=0;i<s.size();i++){//iæ˜¯å³æŒ‡é’ˆ jæ˜¯å·¦æŒ‡é’ˆ
             m[s[i]]++;
-            while(m[s[i]]>1) m[s[j++]]--;//×óÖ¸ÕëÓÒÒÆÒÔÏû³ıÖØ¸´×Ö·û
+            while(m[s[i]]>1) m[s[j++]]--;//å·¦æŒ‡é’ˆå³ç§»ä»¥æ¶ˆé™¤é‡å¤å­—ç¬¦
             res=max(res,i-j+1);
         }
         return res;

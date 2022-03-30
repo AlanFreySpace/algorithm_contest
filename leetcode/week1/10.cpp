@@ -1,4 +1,4 @@
-class Solution {//ÀûÓÃ¶¯Ì¬¹æ»®Çó½â Ê±¼ä¸´ÔÓ¶ÈO(n^2)
+class Solution {//åˆ©ç”¨åŠ¨æ€è§„åˆ’æ±‚è§£ æ—¶é—´å¤æ‚åº¦O(n^2)
 public:
     bool isMatch(string s, string p) {
         int n=s.size(),m=p.size();
@@ -7,8 +7,8 @@ public:
         f[0][0]=true;
         for(int i=0;i<=n;i++){
             for(int j=1;j<=m;j++){
-                if(j+1<=m&&p[j+1]=='*') continue;//Ó¦¹éÈë*Æ¥ÅäµÄÇé¿ö
-                if(i&&p[j]!='*')//×¢ÒâÔËËã·ûÓÅÏÈ¼¶ ÓÃ(s[i]==p[j]||p[j]=='.')±íÊ¾
+                if(j+1<=m&&p[j+1]=='*') continue;//åº”å½’å…¥*åŒ¹é…çš„æƒ…å†µ
+                if(i&&p[j]!='*')//æ³¨æ„è¿ç®—ç¬¦ä¼˜å…ˆçº§ ç”¨(s[i]==p[j]||p[j]=='.')è¡¨ç¤º
                     f[i][j]=(s[i]==p[j]||p[j]=='.')&&f[i-1][j-1];
                 if(p[j]=='*')
                     f[i][j]=f[i][j-2]||(i&&f[i-1][j])&&(s[i]==p[j-1]||p[j-1]=='.');
