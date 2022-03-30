@@ -4,8 +4,8 @@ public:
         int n=nums.size();
         int last=0;
         /*
-        ≥¢ ‘”…last(last<i)Ã¯µΩi,»Ù¥”lastŒﬁ∑®Ã¯µΩi,‘Úlastº”1,
-        »Ùlastº”µΩi,Àµ√˜”…i÷Æ«∞µƒµ„Œﬁ∑®Ã¯µΩi
+        Â∞ùËØïÁî±last(last<i)Ë∑≥Âà∞i,Ëã•‰ªélastÊó†Ê≥ïË∑≥Âà∞i,ÂàôlastÂä†1,
+        Ëã•lastÂä†Âà∞i,ËØ¥ÊòéÁî±i‰πãÂâçÁöÑÁÇπÊó†Ê≥ïË∑≥Âà∞i
         */
         for(int i=1;i<n;i++){
             while(last+nums[last]<i&&last<i)

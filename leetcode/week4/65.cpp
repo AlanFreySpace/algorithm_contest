@@ -3,10 +3,10 @@ public:
     bool isNumber(string s) {
         int i=0;
         bool numerical=scanInteger(s,i);
-        //×¢Òâ´Ë´¦×¢Òâ||µÄ¶ÌÂ·ÏÖÏó Ó¦È·±£i¼Ó1 scanUnsignedInteger(s,++i)Ó¦¸Ã·ÅÔÚÇ°Ãæ
-        if(i<s.size()&&s[i]=='.')//É¨Ãèµ×Êı
-            numerical=scanUnsignedInteger(s,++i)||numerical;//×¢ÒâÒıÓÃÓ¦´«³£Á¿++i,´«i++»á±¨´í
-        if(i<s.size()&&(s[i]=='e'||s[i]=='E'))//É¨ÃèÖ¸Êı
+        //æ³¨æ„æ­¤å¤„æ³¨æ„||çš„çŸ­è·¯ç°è±¡ åº”ç¡®ä¿iåŠ 1 scanUnsignedInteger(s,++i)åº”è¯¥æ”¾åœ¨å‰é¢
+        if(i<s.size()&&s[i]=='.')//æ‰«æåº•æ•°
+            numerical=scanUnsignedInteger(s,++i)||numerical;//æ³¨æ„å¼•ç”¨åº”ä¼ å¸¸é‡++i,ä¼ i++ä¼šæŠ¥é”™
+        if(i<s.size()&&(s[i]=='e'||s[i]=='E'))//æ‰«ææŒ‡æ•°
             numerical=numerical&&scanInteger(s,++i);
         return numerical&&i==s.size();
     }

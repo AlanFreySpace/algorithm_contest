@@ -11,7 +11,7 @@ public:
             use[x][y]=true;
 
             int tmpx=x+dx[d],tmpy=y+dy[d];
-            if(tmpx>=n||tmpx<0||tmpy>=m||tmpy<0||use[tmpx][tmpy])//×¢ÒâÕâÀïÅÐ¶ÏÌõ¼þ±ðÐ´´í
+            if(tmpx>=n||tmpx<0||tmpy>=m||tmpy<0||use[tmpx][tmpy])//æ³¨æ„è¿™é‡Œåˆ¤æ–­æ¡ä»¶åˆ«å†™é”™
                 d=(d+1)%4;
             x=x+dx[d],y=y+dy[d];
         }

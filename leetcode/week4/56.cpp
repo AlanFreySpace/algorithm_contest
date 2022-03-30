@@ -3,19 +3,19 @@ public:
     vector<vector<int>> merge(vector<vector<int>>& a) {
         vector<vector<int>> ans;
         /*
-        ¶ÔÓÚ¶şÎ¬ÏòÁ¿,sort²»¶ÔÏòÁ¿Ã¿Ò»ĞĞÄÚÔªËØÅÅĞò,¶ø¶Ô
-        ¸÷ĞĞ°´Ê×ÔªËØÅÅĞò
+        å¯¹äºäºŒç»´å‘é‡,sortä¸å¯¹å‘é‡æ¯ä¸€è¡Œå†…å…ƒç´ æ’åº,è€Œå¯¹
+        å„è¡ŒæŒ‰é¦–å…ƒç´ æ’åº
         */
         sort(a.begin(),a.end());
         int l=a[0][0],r=a[0][1];
 
         for(int i=1;i<a.size();i++){
-            if(r<a[i][0]){//Çø¼ä²»ÖØµş ¸üĞÂ´ğ°¸
+            if(r<a[i][0]){//åŒºé—´ä¸é‡å  æ›´æ–°ç­”æ¡ˆ
                 ans.push_back({l,r});
                 l=a[i][0],r=a[i][1];
-            }else r=max(r,a[i][1]);//Çø¼äÖØµş ¸üĞÂÓÒ²à¶Ëµã
+            }else r=max(r,a[i][1]);//åŒºé—´é‡å  æ›´æ–°å³ä¾§ç«¯ç‚¹
         }
-        ans.push_back({l,r});//×îºóÒ»¸öÇø¼ä
+        ans.push_back({l,r});//æœ€åä¸€ä¸ªåŒºé—´
         return ans;
     }
 };

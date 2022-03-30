@@ -12,7 +12,7 @@ public:
         dfs(0);
         return ans;
     }
-    //尝试向u行i列中添加皇后
+    //灏濊瘯鍚憉琛宨鍒椾腑娣诲姞鐨囧悗
     void dfs(int u){
         if(u==n){
             ans.emplace_back(path);

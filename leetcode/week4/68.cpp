@@ -6,17 +6,17 @@ public:
         for(int i=0;i<words.size();){
             int len=words[i].size();
             int j=i+1;
-            //jÊÇµ±Ç°ÐÐ×îºóÒ»¸öµ¥´ÊµÄÏÂÒ»¸öµ¥´Ê +1ÊÇÒòÎªÁ½¸öµ¥´ÊÖ®¼äÖÁÉÙÒ»¸ö¿Õ¸ñ
+            //jæ˜¯å½“å‰è¡Œæœ€åŽä¸€ä¸ªå•è¯çš„ä¸‹ä¸€ä¸ªå•è¯ +1æ˜¯å› ä¸ºä¸¤ä¸ªå•è¯ä¹‹é—´è‡³å°‘ä¸€ä¸ªç©ºæ ¼
             while(j<words.size()&&len+words[j].size()+1<=maxWidth)
                 len+=(words[j++].size()+1);
 
             string line;
             line+=words[i];
-            if(j==words.size()||j==i+1){//×ó¶ÔÆëµÄÇé¿ö
+            if(j==words.size()||j==i+1){//å·¦å¯¹é½çš„æƒ…å†µ
                 for(int k=i+1;k<j;k++) line+=(' '+words[k]);
                 line+=string(maxWidth-len,' ');
-            }else{//×óÓÒ¶ÔÆëµÄÇé¿ö
-                //cntÊÇ¼ä¸ôÊý blankÊÇ¿Õ¸ñÊý +cntÊÇÒòÎª10ÐÐ¼ÓÁË1
+            }else{//å·¦å³å¯¹é½çš„æƒ…å†µ
+                //cntæ˜¯é—´éš”æ•° blankæ˜¯ç©ºæ ¼æ•° +cntæ˜¯å› ä¸º10è¡ŒåŠ äº†1
                 int cnt=j-i-1,blank=maxWidth-len+cnt;
                 int k=1;
                 while(k<=blank%cnt) line+=(string(blank/cnt+1,' ')+words[i+k++]);

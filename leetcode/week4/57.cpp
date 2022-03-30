@@ -8,7 +8,7 @@ public:
             b[0]=min(b[0],a[k][0]);
             while(k<n&&b[1]>=a[k][0]) b[1]=max(b[1],a[k++][1]);
         }
-        ans.push_back(b);//×¢Òâ²åÈëbµÄÊ±»ú,´Ë´¦ÈİÒ×³ö´í
+        ans.push_back(b);//æ³¨æ„æ’å…¥bçš„æ—¶æœº,æ­¤å¤„å®¹æ˜“å‡ºé”™
         while(k<n) ans.push_back(a[k++]);
         return ans;
     }

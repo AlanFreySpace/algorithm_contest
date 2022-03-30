@@ -1,13 +1,13 @@
 class Solution {
 public:
-    string getPermutation(int n, int k) {//·½·¨Ò»:¼ÆÊı·¨ Ê±¼ä¸´ÔÓ¶ÈO(n^2)
+    string getPermutation(int n, int k) {//æ–¹æ³•ä¸€:è®¡æ•°æ³• æ—¶é—´å¤æ‚åº¦O(n^2)
         string ans;
         vector<int> fact(10);
         vector<bool> use(10);
         fact[0]=1;
         for(int i=1;i<10;i++) fact[i]=fact[i-1]*i;//fact[i]=i!
 
-        //ÔÚÊı×ÖµÄµÚi¸öÎ»ÖÃ(Î»ÖÃ´Ó1¿ªÊ¼)³¢ÊÔ·ÅÊı×Öj
+        //åœ¨æ•°å­—çš„ç¬¬iä¸ªä½ç½®(ä½ç½®ä»1å¼€å§‹)å°è¯•æ”¾æ•°å­—j
         for(int i=1;i<=n;i++){
             for(int j=1;j<=n;j++){
                 if(!use[j]){
@@ -26,7 +26,7 @@ public:
 };
 
 /*
-·½·¨¶ş:Ê¹ÓÃnext_permutationº¯Êı ´æÒÉ:Ê±¼ä¸´ÔÓ¶ÈO(n!*k)
+æ–¹æ³•äºŒ:ä½¿ç”¨next_permutationå‡½æ•° å­˜ç–‘:æ—¶é—´å¤æ‚åº¦O(n!*k)
 */
 class Solution {
 public:
