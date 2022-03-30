@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int threeSumClosest(vector<int>& nums, int target) {//Óë15ÌâË¼Â·ÏàÍ¬
+    int threeSumClosest(vector<int>& nums, int target) {//ä¸15é¢˜æ€è·¯ç›¸åŒ
         sort(nums.begin(),nums.end());
         int tmp=INT_MAX,res;
         for(int i=0;i<nums.size();i++){

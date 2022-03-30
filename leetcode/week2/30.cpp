@@ -1,21 +1,21 @@
 class Solution {
 public:
-    vector<int> findSubstring(string s, vector<string>& words) {//¸´ÔÓ¶ÈO(n*w)
+    vector<int> findSubstring(string s, vector<string>& words) {//å¤æ‚åº¦O(n*w)
         int n=s.size(),m=words.size(),w=words[0].size();
         unordered_map<string,int> rec;
-        for(auto& word:words) rec[word]++;//Ã¿¸öµ¥´ÊÓ¦³öÏÖµÄ´ÎÊı
+        for(auto& word:words) rec[word]++;//æ¯ä¸ªå•è¯åº”å‡ºç°çš„æ¬¡æ•°
 
         vector<int> res;
         for(int i=0;i<w;i++){
-            int cnt=0;//m¸ö´°¿ÚÖĞÂú×ãÒªÇóµÄµ¥´ÊµÄ¸öÊı
+            int cnt=0;//mä¸ªçª—å£ä¸­æ»¡è¶³è¦æ±‚çš„å•è¯çš„ä¸ªæ•°
             unordered_map<string,int> wd;
             for(int j=i;j+w<=n;j+=w){
-                if(j>=i+m*w){//´°¿Ú¹ı¶à É¾³ıÒ»¸ö´°¿Ú
+                if(j>=i+m*w){//çª—å£è¿‡å¤š åˆ é™¤ä¸€ä¸ªçª—å£
                   auto s2=s.substr(j-m*w,w);
                   wd[s2]--;
                   if(wd[s2]<rec[s2]) cnt--;
                 }
-                auto s1=s.substr(j,w);//Ôö¼ÓÒ»¸ö´°¿Ú
+                auto s1=s.substr(j,w);//å¢åŠ ä¸€ä¸ªçª—å£
                 wd[s1]++;
                 if(wd[s1]<=rec[s1]) cnt++;
                 if(cnt==m) res.emplace_back(j-(m-1)*w);

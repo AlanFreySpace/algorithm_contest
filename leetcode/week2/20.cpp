@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isValid(string s) {//ÀûÓÃÕ»½â¾ö¼´¿É
+    bool isValid(string s) {//åˆ©ç”¨æ ˆè§£å†³å³å¯
         stack<char> stk;
         for(auto c:s){
             if(c=='('||c=='{'||c=='[') stk.push(c);

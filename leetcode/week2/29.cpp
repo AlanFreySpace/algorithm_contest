@@ -1,11 +1,11 @@
 class Solution {
 public:
     /*
-    1.���� dividend �� divisor �ķ����ж����մ𰸵ķ��š�
-    2.��� dividend �� divisor Ϊ���������Ϊ��������Ϊ����������������� 1��
-    3.���ñ����ķ�ʽ������ͨ���Լ�Ԥ����һ����Ԫ�鱶�����飺(divisor, -1),
-    (2 * divisor, -2), (4 * divisor, -4)�������� ֱ�� 2^k * divisor С���� dividend������;ע���ж�Խ�硣
-    4.�����������������飬��� dividend С�ڵ�ǰ����� dividend ��ȥ��ǰ��ۼƸ��𰸣��Դ����ơ�
+    1.根据 dividend 和 divisor 的符号判断最终答案的符号。
+    2.如果 dividend 或 divisor 为正数，则变为负数，因为负数的数域比正数多 1。
+    3.采用倍增的方式，首先通过自加预处理一个二元组倍增数组：(divisor, -1),
+    (2 * divisor, -2), (4 * divisor, -4)，……， 直到 2^k * divisor 小于了 dividend，但中途注意判断越界。
+    4.倒序遍历这个倍增数组，如果 dividend 小于当前项，则让 dividend 减去当前项，累计负答案，以此类推。
     */
     int divide(int dividend, int divisor) {
         const int HALF_INT_MIN=-1073741824;//-2^30

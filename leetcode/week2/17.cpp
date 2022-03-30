@@ -7,12 +7,12 @@ public:
         "pqrs","tuv","wxyz"
     };
 
-    vector<string> letterCombinations(string digits) {//使用dfs算法
+    vector<string> letterCombinations(string digits) {//浣跨敤dfs绠楁硶
         if(digits.size()==0) return ans;
         dfs(digits,0,"");
         return ans;
     }
-    //对digits第i位数字对应的字母进行深度优先遍历
+    //瀵筪igits绗琲浣嶆暟瀛楀搴旂殑瀛楁瘝杩涜娣卞害浼樺厛閬嶅巻
     void dfs(string& digits,int i,string s){
         if(i==digits.size()) ans.push_back(s);
         else{

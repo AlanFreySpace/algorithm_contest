@@ -1,13 +1,13 @@
 class Solution {
 public:
-    string longestCommonPrefix(vector<string>& strs) {//×¢ÒâÇ°×ºÊÇÁ¬ĞøµÄ
+    string longestCommonPrefix(vector<string>& strs) {//æ³¨æ„å‰ç¼€æ˜¯è¿ç»­çš„
         string res;
         if(strs.empty()) return res;
 
         for(int i=0;i<strs[0].size();i++){
             int c=strs[0][i];
-            for(auto& str:strs){//×¢Òâ´Ë´¦´«ÒıÓÃ±éÀúÊÇ¸ü¿ìµÄ
-                if(i==str.size()||str[i]!=c) return res;//ÏÂ±êÔ½½ç»ò×Ö·û²»Í¬
+            for(auto& str:strs){//æ³¨æ„æ­¤å¤„ä¼ å¼•ç”¨éå†æ˜¯æ›´å¿«çš„
+                if(i==str.size()||str[i]!=c) return res;//ä¸‹æ ‡è¶Šç•Œæˆ–å­—ç¬¦ä¸åŒ
             }
             res+=c;
         }

@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int romanToInt(string s) {//Ä£Äâ+ÕÒ¹æÂÉ
+    int romanToInt(string s) {//æ¨¡æ‹Ÿ+æ‰¾è§„å¾‹
         unordered_map<char,int> hash;
         hash['I']=1,hash['V']=5;
         hash['X']=10,hash['L']=50;
@@ -8,7 +8,7 @@ public:
         hash['M']=1000;
         int res=0;
         for(int i=0;i<s.size()-1;i++){
-            if(hash[s[i]]<hash[s[i+1]]) res-=hash[s[i]];//×¢Òâ¸Ã¹æÂÉ
+            if(hash[s[i]]<hash[s[i+1]]) res-=hash[s[i]];//æ³¨æ„è¯¥è§„å¾‹
             else res+=hash[s[i]];
         }
         res+=hash[s[s.size()-1]];

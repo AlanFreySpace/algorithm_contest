@@ -10,8 +10,8 @@
  */
 class Solution {
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {//¿ìÂıÖ¸Õë¸´ÔÓ¶ÈÊµ¼ÊÉÏºÍÕâ¸ö
-        auto dummy=new ListNode(-1);//×ö·¨¸´ÔÓ¶ÈÏàÍ¬
+    ListNode* removeNthFromEnd(ListNode* head, int n) {//å¿«æ…¢æŒ‡é’ˆå¤æ‚åº¦å®é™…ä¸Šå’Œè¿™ä¸ª
+        auto dummy=new ListNode(-1);//åšæ³•å¤æ‚åº¦ç›¸åŒ
         dummy->next=head;
 
         int num=0;

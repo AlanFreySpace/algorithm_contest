@@ -15,15 +15,15 @@ public:
         dummy->next=head;
         for(auto p=dummy;;){
             auto q=p;
-            for(int i=0;i<k&&q;i++) q=q->next;//²éÕÒÒ»×ék¸ö½Úµã
+            for(int i=0;i<k&&q;i++) q=q->next;//æŸ¥æ‰¾ä¸€ç»„kä¸ªèŠ‚ç‚¹
             if(!q) break;
             auto a=p->next,b=a->next;
-            for(int i=0;i<k-1;i++){//ÄÚ²¿·­×ª
+            for(int i=0;i<k-1;i++){//å†…éƒ¨ç¿»è½¬
                 auto c=b->next;
                 b->next=a;
                 a=b,b=c;
             }
-            auto d=p->next;//Íâ²¿·­×ª ´Ë´¦ÈÝÒ×³ö´í
+            auto d=p->next;//å¤–éƒ¨ç¿»è½¬ æ­¤å¤„å®¹æ˜“å‡ºé”™
             d->next=b,p->next=a;
             p=d;
         }

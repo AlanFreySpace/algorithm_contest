@@ -1,14 +1,14 @@
 class Solution {
 public:
-    int strStr(string s, string p) {//kmpËã·¨
+    int strStr(string s, string p) {//kmpç®—æ³•
         if(p.empty()) return 0;
         int n=s.size(),m=p.size();
         s=' '+s,p=' '+p;
-        vector<int> next(m+1);//×¢ÒâÕâÀïµÄÉùÃ÷ ÈİÒ×Ğ´´í
+        vector<int> next(m+1);//æ³¨æ„è¿™é‡Œçš„å£°æ˜ å®¹æ˜“å†™é”™
 
-        //ÓÉnext[i-1]ÍÆnext[i]
+        //ç”±next[i-1]æ¨next[i]
         for(int i=2,j=0;i<=m;i++){
-            //´ËÊ±j±íÃ÷p[j]ºÍp[i-1]¶ÔÆë jÊÇnext[i-1]
+            //æ­¤æ—¶jè¡¨æ˜p[j]å’Œp[i-1]å¯¹é½ jæ˜¯next[i-1]
             while(j&&p[i]!=p[j+1]) j=next[j];
             if(p[i]==p[j+1]) j++;
             next[i]=j;

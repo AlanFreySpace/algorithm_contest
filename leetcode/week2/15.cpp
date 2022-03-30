@@ -1,14 +1,14 @@
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {//Ë«Ö¸Õë½â¾ö Ê±¼ä¸´ÔÓ¶ÈO(n^2)
+    vector<vector<int>> threeSum(vector<int>& nums) {//åŒæŒ‡é’ˆè§£å†³ æ—¶é—´å¤æ‚åº¦O(n^2)
         sort(nums.begin(),nums.end());
         vector<vector<int>> res;
-        //×¢ÒâÒª·ÖºÃÀà Ò»Ö±ÒªÂú×ãi<j<k
+        //æ³¨æ„è¦åˆ†å¥½ç±» ä¸€ç›´è¦æ»¡è¶³i<j<k
         for(int i=0;i<nums.size();i++){
-            if(i&&nums[i]==nums[i-1]) continue;//·ÀÖ¹iÔªËØÖØ¸´
+            if(i&&nums[i]==nums[i-1]) continue;//é˜²æ­¢iå…ƒç´ é‡å¤
             for(int j=i+1,k=nums.size()-1;j<k;j++){
-                if(j>i+1&&nums[j]==nums[j-1]) continue;//·ÀÖ¹jÔªËØÖØ¸´
-                //²éÕÒ Ö±µ½nums[i]+nums[j]+nums[k-1]<0 ´ËÊ±ÔÙÅĞ¶¨k´¦¼´¿É ÕâÀïºÜÇÉÃî
+                if(j>i+1&&nums[j]==nums[j-1]) continue;//é˜²æ­¢jå…ƒç´ é‡å¤
+                //æŸ¥æ‰¾ ç›´åˆ°nums[i]+nums[j]+nums[k-1]<0 æ­¤æ—¶å†åˆ¤å®škå¤„å³å¯ è¿™é‡Œå¾ˆå·§å¦™
                 while(j<k-1&&nums[i]+nums[j]+nums[k-1]>=0) k--;
                 if(nums[i]+nums[j]+nums[k]==0)
                     res.push_back({nums[i],nums[j],nums[k]});

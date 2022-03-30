@@ -12,7 +12,7 @@ class Solution {
 public:
     struct cmp{
         bool operator() (ListNode* a,ListNode* b){
-            return a->val>b->val;//–°∂•∂—
+            return a->val>b->val;//Â∞èÈ°∂Â†Ü
         }
     };
     ListNode* mergeKLists(vector<ListNode*>& lists) {

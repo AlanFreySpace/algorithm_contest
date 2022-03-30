@@ -14,9 +14,9 @@ public:
         auto dummy=new ListNode(-1);
         dummy->next=head;
 
-        for(auto p=dummy;p->next&&p->next->next;){//利用三个指针解决问题
+        for(auto p=dummy;p->next&&p->next->next;){//鍒╃敤涓変釜鎸囬拡瑙ｅ喅闂
             auto a=p->next,b=p->next->next;
-            //此处注意顺序
+            //姝ゅ娉ㄦ剰椤哄簭
             p->next=b;
             a->next=b->next;
             b->next=a;
