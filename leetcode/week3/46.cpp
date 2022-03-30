@@ -4,9 +4,9 @@ public:
     vector<int> path;
     vector<bool> use;
 
-    vector<vector<int>> permute(vector<int>& nums) {//dfsµÄÓ¦ÓÃ
+    vector<vector<int>> permute(vector<int>& nums) {//dfsçš„åº”ç”¨
         int n=nums.size();
-        use=vector<bool>(n);//×¢ÒâÕâÖÖÉùÃ÷·½·¨
+        use=vector<bool>(n);//æ³¨æ„è¿™ç§å£°æ˜æ–¹æ³•
         path=vector<int>(n);
         dfs(nums,0);
         return ans;

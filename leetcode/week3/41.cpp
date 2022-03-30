@@ -1,8 +1,8 @@
 class Solution {
 public:
-    int firstMissingPositive(vector<int>& nums) {//O(n)Ê±¼ä¸´ÔÓ¶È O(1)¿Õ¼ä¸´ÔÓ¶È
+    int firstMissingPositive(vector<int>& nums) {//O(n)æ—¶é—´å¤æ‚åº¦ O(1)ç©ºé—´å¤æ‚åº¦
         int n=nums.size();
-        //numsÊı×éÖĞ1-nÖ®¼äµÄÊı×ÖiÓ¦ÔÚÎ»ÖÃi-1´¦
+        //numsæ•°ç»„ä¸­1-nä¹‹é—´çš„æ•°å­—iåº”åœ¨ä½ç½®i-1å¤„
         for(int i=0;i<n;i++){
             while(nums[i]>0&&nums[i]<=n&&nums[nums[i]-1]!=nums[i])
                 swap(nums[i],nums[nums[i]-1]);

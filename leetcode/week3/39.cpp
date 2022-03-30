@@ -15,12 +15,12 @@ public:
         }
         if(u==c.size()) return;
 
-        for(int i=0;i*c[u]<=target;i++){//i代表当前方案中有几个c[u]
+        for(int i=0;i*c[u]<=target;i++){//i浠ｈ〃褰撳墠鏂规涓湁鍑犱釜c[u]
             dfs(c,u+1,target-i*c[u]);
-            path.push_back(c[u]);//注意元素压入时机
+            path.push_back(c[u]);//娉ㄦ剰鍏冪礌鍘嬪叆鏃舵満
         }
 
-        for(int i=0;i*c[u]<=target;i++){//恢复现场
+        for(int i=0;i*c[u]<=target;i++){//鎭㈠鐜板満
             path.pop_back();
         }
     }

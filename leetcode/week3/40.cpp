@@ -18,7 +18,7 @@ public:
 
         int k=u+1;
         while(k<c.size()&&c[u]==c[k]) k++;
-        int cnt=k-u;//c[u]µÄ×î´ó³öÏÖ´ÎÊý
+        int cnt=k-u;//c[u]çš„æœ€å¤§å‡ºçŽ°æ¬¡æ•°
 
         for(int i=0;i*c[u]<=target&&i<=cnt;i++){
             dfs(c,k,target-i*c[u]);

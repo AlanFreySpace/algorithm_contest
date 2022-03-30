@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //emplace_back和move均避免了拷贝操作 提高效率
+    //emplace_back鍜宮ove鍧囬伩鍏嶄簡鎷疯礉鎿嶄綔 鎻愰珮鏁堢巼
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
        unordered_map<string,vector<string>> hash;
        for(auto& str:strs){

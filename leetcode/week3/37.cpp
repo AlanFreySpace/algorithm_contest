@@ -30,7 +30,7 @@ public:
                 row[x][i]=col[y][i]=cell[x/3][y/3][i]=true;
                 board[x][y]=t;
                 if(dfs(board,x,y+1)) return true;
-                row[x][i]=col[y][i]=cell[x/3][y/3][i]=false;//ª÷∏¥œ÷≥°
+                row[x][i]=col[y][i]=cell[x/3][y/3][i]=false;//ÊÅ¢Â§çÁé∞Âú∫
                 board[x][y]='.';
             }
         }

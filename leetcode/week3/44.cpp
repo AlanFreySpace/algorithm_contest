@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool isMatch(string s, string p) {//ÀûÓÃ¶¯Ì¬¹æ»®½â¾öÎÊÌâ Ê±¼ä¸´ÔÓ¶ÈO(n*m)
+    bool isMatch(string s, string p) {//åˆ©ç”¨åŠ¨æ€è§„åˆ’è§£å†³é—®é¢˜ æ—¶é—´å¤æ‚åº¦O(n*m)
         int n=s.size(),m=p.size();
         s=' '+s,p=' '+p;
         vector<vector<bool>> f(n+1,vector<bool>(m+1));

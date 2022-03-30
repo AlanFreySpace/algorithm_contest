@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
         bool st[9];
-        //ÅÐ¶ÏÐÐ
+        //åˆ¤æ–­è¡Œ
         for(int i=0;i<9;i++){
             memset(st,0,sizeof(st));
             for(int j=0;j<9;j++){
@@ -13,7 +13,7 @@ public:
                 }
             }
         }
-        //ÅÐ¶ÏÁÐ
+        //åˆ¤æ–­åˆ—
         for(int i=0;i<9;i++){
             memset(st,0,sizeof(st));
             for(int j=0;j<9;j++){
@@ -24,7 +24,7 @@ public:
                 }
             }
         }
-        //ÅÐ¶ÏÐ¡¾Å¹¬¸ñ
+        //åˆ¤æ–­å°ä¹å®«æ ¼
         for(int i=0;i+3<=9;i+=3){
             for(int j=0;j+3<=9;j+=3){
                 memset(st,0,sizeof(st));

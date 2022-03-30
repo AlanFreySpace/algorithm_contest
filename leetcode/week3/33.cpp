@@ -3,21 +3,21 @@ public:
     int search(vector<int>& nums, int target) {
         int l=0,r=nums.size()-1;
 
-        while(l<r){//ÕÒµ½Á½ÉÏÉıĞòÁĞµÄ·Ö½çµã
-            int mid=(l+r+1)>>1;//+1ÊÇÎªÁË·ÀÖ¹ÏİÈëËÀÑ­»·
+        while(l<r){//æ‰¾åˆ°ä¸¤ä¸Šå‡åºåˆ—çš„åˆ†ç•Œç‚¹
+            int mid=(l+r+1)>>1;//+1æ˜¯ä¸ºäº†é˜²æ­¢é™·å…¥æ­»å¾ªç¯
             if(nums[mid]>=nums[0]) l=mid;
             else r=mid-1;
         }
-        //µÃµ½targetÔÚÄÄ¸öÓĞĞòĞòÁĞÖĞ
+        //å¾—åˆ°targetåœ¨å“ªä¸ªæœ‰åºåºåˆ—ä¸­
         if(target>=nums[0]) l=0;
         else l=r+1,r=nums.size()-1;
 
-        while(l<r){//¶ş·Ö²éÕÒtarget
+        while(l<r){//äºŒåˆ†æŸ¥æ‰¾target
             int mid=(l+r)>>1;
             if(nums[mid]>=target) r=mid;
             else l=mid+1;
         }
-        //×¢ÒâÓÃÀı[1] target=0 Òò´Ë±ØĞëÊ¹ÓÃr
+        //æ³¨æ„ç”¨ä¾‹[1] target=0 å› æ­¤å¿…é¡»ä½¿ç”¨r
         if(nums[r]==target) return r;
         else return -1;
     }

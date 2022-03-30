@@ -4,7 +4,7 @@ public:
         typedef long long ll;
         bool is_minus=n<0;
         double res=1;
-        //¿ìËÙÃÝËã·¨
+        //å¿«é€Ÿå¹‚ç®—æ³•
         for(ll k=abs(ll(n));k;k>>=1){
             if(k&1) res*=x;
             x*=x;

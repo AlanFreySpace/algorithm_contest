@@ -1,14 +1,14 @@
 class Solution {
 public:
     /*
-    �ⷨһ:����ɨ��
-    1.�۲�����ͼ�Σ����Ƕ�ˮ��������н��в��
-    2.ע�⵽��ÿ���������Ϸ����ܽ��ܵ�ˮ�ĸ߶ȣ������������ߵľ��Σ�
-    ���ұ���ߵľ��ξ����ġ�����أ������i���������ĸ߶�Ϊheight[i]��
-    �Ҿ����������ߵľ������ĸ߶�Ϊleft_max[i]���ұ���ߵľ������߶�Ϊ
-    right_max[i]����þ������Ϸ��ܽ���ˮ�ĸ߶�Ϊ
-    min(left_max[i], right_max[i]) - height[i]��
-    3.��Ҫ�ֱ��������ɨ����left_max������������right_max�����ͳ�ƴ𰸼��ɡ�
+    解法一:三次扫描
+    1.观察整个图形，考虑对水的面积按列进行拆解
+    2.注意到，每个矩形条上方所能接受的水的高度，是由它左边最高的矩形，
+    和右边最高的矩形决定的。具体地，假设第i个矩形条的高度为height[i]，
+    且矩形条左边最高的矩形条的高度为left_max[i]，右边最高的矩形条高度为
+    right_max[i]，则该矩形条上方能接受水的高度为
+    min(left_max[i], right_max[i]) - height[i]。
+    3.需要分别从左向右扫描求left_max，从右向左求right_max，最后统计答案即可。
     */
     int trap(vector<int>& height) {
         int ans=0;
@@ -33,16 +33,16 @@ public:
 class Solution {
 public:
     /*
-    �ⷨ��:����ջ
-    1.��һ��˼·������ÿ��λ����ߺ��ұߵ�һ�����������͵ľ�������
-    �Լ��������������ɵ�U�ͣ��൱�ڶ�ˮ��������н��в�⡣
-    2.ά���ϸ񵥵��ݼ��ĵ���ջ����ÿ�μ��ջ��Ҫ��ջʱ��iΪ�ұߵ�һ��
-    ��st.top()���͵ľ��Σ�st.top()����ջ�����������Ϊtop��
-    3.�����ʱջ����Ȼ���ھ��Σ�����st.top()����ջ���ջ������top��i
-    ����λ�ù���һ��U�ͣ�����topλ�ô���U�͵ĵײ�����ʱ���Լ������U��
-    ���ܽ��ܵ�ˮ�����Ϊ
-    (i - st.top() - 1) * (min(height[st.top()], height[i]) - height[top])��
-    4.���ǰ���ν�ջ��
+    解法二:单调栈
+    1.换一种思路，考虑每个位置左边和右边第一个比自身不低的矩形条，
+    以及三个矩形条构成的U型，相当于对水的面积按行进行拆解。
+    2.维护严格单调递减的单调栈。在每次检查栈顶要出栈时，i为右边第一个
+    比st.top()不低的矩形，st.top()弹出栈顶，并将其记为top。
+    3.假设此时栈中仍然存在矩形，现在st.top()（弹栈后的栈顶）、top与i
+    三个位置构成一个U型，其中top位置代表U型的底部，此时可以计算出该U型
+    所能接受的水的面积为
+    (i - st.top() - 1) * (min(height[st.top()], height[i]) - height[top])。
+    4.最后当前矩形进栈。
     */
     int trap(vector<int>& height) {
         int n=height.size(),ans=0;

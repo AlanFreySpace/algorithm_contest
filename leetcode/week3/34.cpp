@@ -4,7 +4,7 @@ public:
         if(nums.empty()) return {-1,-1};
         int l=0,r=nums.size()-1;
 
-        while(l<r){//²éÕÒ×î×ó²àµÄÎ»ÖÃ(¿¼²éÊý×éÖÐËùÓÐÔªËØÏàÍ¬ Ôòr²»¶Ï×óÒÆ)
+        while(l<r){//æŸ¥æ‰¾æœ€å·¦ä¾§çš„ä½ç½®(è€ƒæŸ¥æ•°ç»„ä¸­æ‰€æœ‰å…ƒç´ ç›¸åŒ åˆ™rä¸æ–­å·¦ç§»)
             int mid=(l+r)>>1;
             if(nums[mid]>=target) r=mid;
             else l=mid+1;
@@ -13,7 +13,7 @@ public:
 
         int L=r;
         l=r,r=nums.size()-1;
-        while(l<r){//²éÕÒ×îÓÒ²àµÄÎ»ÖÃ(¿¼²éÊý×éÖÐËùÓÐÔªËØÏàÍ¬ Ôòl²»¶ÏÓÒÒÆ)
+        while(l<r){//æŸ¥æ‰¾æœ€å³ä¾§çš„ä½ç½®(è€ƒæŸ¥æ•°ç»„ä¸­æ‰€æœ‰å…ƒç´ ç›¸åŒ åˆ™lä¸æ–­å³ç§»)
             int mid=(l+r+1)>>1;
             if(nums[mid]<=target) l=mid;
             else r=mid-1;

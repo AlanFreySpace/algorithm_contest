@@ -1,13 +1,13 @@
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
-        //ÕÒµ½´óÓÚµÈÓÚtargetµÄµÚÒ»¸öÎ»ÖÃ ¿ÉÒÔÓÃ[1,3] target=5»ò2Ä£Äâ
+        //æ‰¾åˆ°å¤§äºç­‰äºtargetçš„ç¬¬ä¸€ä¸ªä½ç½® å¯ä»¥ç”¨[1,3] target=5æˆ–2æ¨¡æ‹Ÿ
         int l=0,r=nums.size();
 
         while(l<r){
             int mid=(l+r)>>1;
-            if(nums[mid]>=target) r=mid; //±£Áô½Ï´óµÄÎ»ÖÃ
-            else l=mid+1; //½ÏĞ¡µÄÎ»ÖÃ²»ÒªÁô
+            if(nums[mid]>=target) r=mid; //ä¿ç•™è¾ƒå¤§çš„ä½ç½®
+            else l=mid+1; //è¾ƒå°çš„ä½ç½®ä¸è¦ç•™
         }
         return l;
     }

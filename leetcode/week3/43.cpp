@@ -3,24 +3,24 @@ public:
     string multiply(string num1, string num2) {
         int n=num1.size(),m=num2.size();
         vector<int> A,B,res(n+m);
-        //ÏòÁ¿µÍÎ»´æ´¢µÍÎ»Êı×Ö
+        //å‘é‡ä½ä½å­˜å‚¨ä½ä½æ•°å­—
         for(int i=n-1;i>=0;i--) A.push_back(num1[i]-'0');
         for(int i=m-1;i>=0;i--) B.push_back(num2[i]-'0');
-        //ÏÈ²»½øÎ»
+        //å…ˆä¸è¿›ä½
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++)
                 res[i+j]+=(A[i]*B[j]);
         }
-        //½øÎ»
+        //è¿›ä½
         for(int i=0,t=0;i<res.size();i++){
             t+=res[i];
             res[i]=t%10;
             t/=10;
         }
-        //È¥µôÇ°µ¼0
+        //å»æ‰å‰å¯¼0
         int k=res.size()-1;
         while(k>0&&!res[k]) k--;
-        //×ªÎª×Ö·û´®
+        //è½¬ä¸ºå­—ç¬¦ä¸²
         string ans;
         for(int i=k;i>=0;i--) ans+=('0'+res[i]);
         return ans;

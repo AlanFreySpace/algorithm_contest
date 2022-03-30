@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void nextPermutation(vector<int>& nums) {//O(n)Ê±¼ä¸´ÔÓ¶È
+    void nextPermutation(vector<int>& nums) {//O(n)æ—¶é—´å¤æ‚åº¦
         int k=nums.size()-1;
         while(k>0&&nums[k-1]>=nums[k]) k--;
 
@@ -9,7 +9,7 @@ public:
             int t=k;
             while(t<nums.size()&&nums[t]>nums[k-1]) t++;
             swap(nums[t-1],nums[k-1]);
-            reverse(nums.begin()+k,nums.end());//×¢ÒâÕâ²½¾Í¿ÉÊµÏÖÉıĞòÅÅÁĞ ºÜÇÉÃî
+            reverse(nums.begin()+k,nums.end());//æ³¨æ„è¿™æ­¥å°±å¯å®ç°å‡åºæ’åˆ— å¾ˆå·§å¦™
         }
     }
 };
