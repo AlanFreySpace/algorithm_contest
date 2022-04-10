@@ -50,8 +50,8 @@ public:
         for(int i=u;i<nums.size();i++){
             path.emplace_back(nums[i]);
             dfs(nums,i+1);
+            //注意下面两句是回溯过程 很巧妙
             path.pop_back();
-
             while(i+1<nums.size()&&nums[i]==nums[i+1]) i++;
         }
     }
