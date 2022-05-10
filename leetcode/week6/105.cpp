@@ -9,7 +9,7 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-class Solution {
+class Solution {//时间复杂度O(n)
 public:
     unordered_map<int,int> pos;//哈希表查找中序遍历中根节点的位置
 
