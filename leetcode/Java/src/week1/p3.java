@@ -4,11 +4,11 @@ import java.util.HashMap;
 
 public class p3 {
 	/*
-	 * ¼¸µãºÍC++´úÂëÏà±ÈĞèÒª×¢ÒâµÄµã£º
-	 * 1.ĞèÒªÀûÓÃcontainsKey·½·¨ÅĞ¶ÏkeyÊÇ·ñ´æÔÚ,ÈôÏñC++ÄÇÑùĞ´»á±¨¿ÕÖ¸Õë´íÎó
-	 * 2.m.put(s.charAt(i),m.get(s.charAt(i))+1);Ò»¾ä²»ÄÜĞ´³É
-	 * m.put(s.charAt(i),2);¿ÉÒÔ¿¼ÂÇÀı×Ó:"tmmzuxt",¶ÔtµÄÅĞ¶Ï»á³ö´í,¼üÖµ¶Ô(t,0),
-	 * ±¾Ó¦±äÎª(t,1),È´ÖÃÎªÁË(t,2)
+	 * å‡ ç‚¹å’ŒC++ä»£ç ç›¸æ¯”éœ€è¦æ³¨æ„çš„ç‚¹ï¼š
+	 * 1.éœ€è¦åˆ©ç”¨containsKeyæ–¹æ³•åˆ¤æ–­keyæ˜¯å¦å­˜åœ¨,è‹¥åƒC++é‚£æ ·å†™ä¼šæŠ¥ç©ºæŒ‡é’ˆé”™è¯¯
+	 * 2.m.put(s.charAt(i),m.get(s.charAt(i))+1);ä¸€å¥ä¸èƒ½å†™æˆ
+	 * m.put(s.charAt(i),2);å¯ä»¥è€ƒè™‘ä¾‹å­:"tmmzuxt",å¯¹tçš„åˆ¤æ–­ä¼šå‡ºé”™,é”®å€¼å¯¹(t,0),
+	 * æœ¬åº”å˜ä¸º(t,1),å´ç½®ä¸ºäº†(t,2)
 	 */
 	public int lengthOfLongestSubstring(String s) {
         HashMap<Character,Integer> m=new HashMap<>();
