@@ -6,8 +6,8 @@ public class p14 {
 
         for(int i=0;i<strs[0].length();i++){
             char tmp=strs[0].charAt(i);
-            for(int j=1;j<strs.length;j++){
-                if(i==strs[j].length()||tmp!=strs[j].charAt(i))
+            for(String s:strs){
+                if(i==s.length()||tmp!=s.charAt(i))
                     return res;
             }
             res+=tmp;
