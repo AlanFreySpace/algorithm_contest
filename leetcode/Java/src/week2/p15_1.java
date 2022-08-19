@@ -12,6 +12,7 @@ public class p15_1 {
 
         for(int i=0;i<nums.length;i++){
             if(i!=0&&nums[i]==nums[i-1]) continue;
+            //注意这里条件是j<nums.length-1,不要写成j<nums.length,否则会出错
             for(int j=i+1;j<nums.length-1;j++){
                 if(j>i+1&&nums[j]==nums[j-1]) continue;
                 int k=nums.length-1;
