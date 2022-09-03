@@ -1,12 +1,14 @@
 package test;
 
 public class test1 {
-	 private static int $;
-	 public String a_b;
-	 
 	 public static void main(String[] main) {
-		 test1 t=new test1();
-		 System.out.println($);
-		 System.out.println(t.a_b);
+		 /*
+		 final long i;
+		 //i=100;
+		 //System.out.println(a.length());
+		 System.out.println(i);
+		 */
+		 int a=5,b=10;
+		 System.out.println((a++)+(++b)+a*b);
 	 }
 }
