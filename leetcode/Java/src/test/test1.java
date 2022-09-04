@@ -2,7 +2,11 @@ package test;
 
 public class test1 {
 	 public static void main(String[] main) {
-		 char[] str= {'a','b','c','d','e','f','g'};
-		 System.out.println(str);
+		 int x=10,y=30;
+		 do {
+			 y-=x;
+			 x++;
+			 System.out.println(x+" "+y);
+		 }while(x++<y--);
 	 }
 }
