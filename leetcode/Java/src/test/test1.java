@@ -1,15 +1,16 @@
 package test;
 
 public class test1 {
-	int b;
-	
-	test1(int a){
-		b=a;
-	}
+	int x;
+    static class Inner{
+        static int a = 0;//这样写是不合法的
+        static final int b=0;//这样写是合法的
+        int c=0;
+    }
+
 	
 	
     public static void main(String[] args)  {
-        test1 t1=new test1();
-        System.out.println(t1.b);
+        
     }
 }
