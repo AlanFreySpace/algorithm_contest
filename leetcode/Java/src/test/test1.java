@@ -2,15 +2,11 @@ package test;
 
 public class test1 {
 	int x;
-    static class Inner{
-        static int a = 0;//这样写是不合法的
-        static final int b=0;//这样写是合法的
-        int c=0;
-    }
-
-	
+	static void c() {}
 	
     public static void main(String[] args)  {
-        
+    	test1 t=new test1();
+        System.out.println(t.x);
+        test1.c();//使用类名调用静态方法
     }
 }
