@@ -1,5 +1,5 @@
 package test;
 
 public interface Test {
-	int b=10;
+	private int b=10;
 }
