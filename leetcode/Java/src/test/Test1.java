@@ -9,7 +9,7 @@ public class Test1 {
 		byte[] a1,a2[];
 		byte[][] a3;
 		byte a4[][];
-		a2=a1;
-		a3=a4;
+		//a2=a1; 错误 因为a2是二维数组 而a1是一维数组
+		//a3=a4; 错误 因为a4没有初始化
     }
 }
