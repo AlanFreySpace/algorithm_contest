@@ -6,11 +6,11 @@ import java.util.List;
 public class p51 {
 	List<List<String>> ans=new ArrayList<>();
     char[][] path;
-    boolean[] usex,usey,usexy,useyx;
+    //注意不需要使用usey,因为y一定是单调递增不同的
+    boolean[] usex,usexy,useyx;
 
     public List<List<String>> solveNQueens(int n) {
         usex=new boolean[n];
-        usey=new boolean[n];
         usexy=new boolean[2*n-1];
         useyx=new boolean[2*n-1];
         path=new char[n][n];
@@ -31,11 +31,11 @@ public class p51 {
             ans.add(list);
         }
         for(int x=0;x<n;x++){
-            if(!usex[x]&&!usey[y]&&!usexy[y-x+n-1]&&!useyx[x+y]){
+            if(!usex[x]&&!usexy[y-x+n-1]&&!useyx[x+y]){
                 path[y][x]='Q';
-                usex[x]=usey[y]=usexy[y-x+n-1]=useyx[x+y]=true;
+                usex[x]=usexy[y-x+n-1]=useyx[x+y]=true;
                 dfs(n,y+1);
-                usex[x]=usey[y]=usexy[y-x+n-1]=useyx[x+y]=false;
+                usex[x]=usexy[y-x+n-1]=useyx[x+y]=false;
                 path[y][x]='.';
             }
         }
