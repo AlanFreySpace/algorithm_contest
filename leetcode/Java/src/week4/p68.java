@@ -13,12 +13,12 @@ public class p68 {
             while(j<words.length&&size+words[j].length()+1<=maxWidth)
                 size+=(words[j++].length()+1);
 
-            System.out.println(size);
-
             String line="";
             if(j==words.length||j==i+1){
-                line=words[i];
-                int len=maxWidth-words[i].length();
+                for(int k=i;k<j-1;k++)
+                    line+=(words[k]+" ");
+                line+=words[j-1];
+                int len=maxWidth-size;
                 for(int k=0;k<len;k++) line+=" ";
             }else{
                 int cnt=j-i-1,blank=maxWidth-size+cnt;
