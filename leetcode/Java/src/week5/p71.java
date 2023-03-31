@@ -3,7 +3,6 @@ package week5;
 import java.util.Stack;
 
 public class p71 {
-	//方法1:和C++解法的思路是相同的
 	public String simplifyPath(String path) {
         int len=path.length();
         if(path.charAt(len-1)!='/') path+='/';
