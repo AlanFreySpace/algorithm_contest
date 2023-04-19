@@ -13,9 +13,11 @@ public class p75 {
         for(int i=redNum+whiteNum;i<nums.length;i++) nums[i]=2; 
     }
 	
+	// 荷兰国旗算法
 	public void sortColors1(int[] nums) {
         /**
-         * 初始状态:(可确认)[0,j-1]区间为0,[j,i-1]区间为1,[k+1,n-1]区间为2
+         * 性质:[0,j-1]区间为0,[j,i-1]区间为1,[k+1,n-1]区间为2
+         * 用数学归纳法可以证明下面的算法始终维持上面的性质
          */
 		for(int i=0,j=0,k=nums.length-1;i<=k;){
             int tmp=0;
