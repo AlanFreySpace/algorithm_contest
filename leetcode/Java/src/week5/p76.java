@@ -17,6 +17,7 @@ public class p76 {
             }
         }
 
+        // 分类标准：以s[i]结尾的最小覆盖子串
         int cnt=0;//有效字符数
         for(int i=0,j=0;i<s.length();i++){
         	/**
