@@ -11,9 +11,27 @@ public class p79 {
         m=board.length;
         n=board[0].length;
         flag=new boolean[m][n];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(dfs(j,i,board,word,0)) return true;
+            }
+        }
+        return false;
     }
 
-    boolean dfs(int x,int y,String word,int k){
+    boolean dfs(int x,int y,char[][] board,String word,int k){
         if(k==word.length()) return true;
+        if(word.charAt(k)!=board[y][x]) return false;
+
+        flag[y][x]=true;
+        boolean tmp=false;
+        for(int i=0;i<4;i++){
+            int tox=x+dx[i],toy=y+dy[i]; 
+            if(tox>=0&&tox<n&&toy>=0&&toy<m&&!flag[toy][tox]){
+                if(dfs(tox,toy,board,word,k+1)) return true;
+            }
+        }
+        flag[y][x]=false;
+        return false;
     }
 }
