@@ -10,8 +10,8 @@ public class p80 {
             else{
                 nums[j]=nums[i+1];
                 count=1;
-                j++;
             }
+            if(count<=2) j++;
         }
         return j;
     }
