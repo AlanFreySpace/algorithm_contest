@@ -6,12 +6,13 @@ public class p80 {
         for(i=0,j=1;i<nums.length-1;i++){
             if(nums[i]==nums[i+1]){
                 count++;
+                if(count<=2) j++;
             }
             else{
                 nums[j]=nums[i+1];
                 count=1;
+                j++;
             }
-            if(count<=2) j++;
         }
         return j;
     }
