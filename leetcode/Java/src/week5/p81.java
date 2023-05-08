@@ -12,5 +12,15 @@ public class p81 {
             if(nums[mid]>=nums[0]) l=mid;
             else r=mid-1;
         }
+
+        if(target>=nums[0]) l=0;
+        else{
+            l++;
+            r=R;
+        }
+
+        while(l<r){
+            
+        }
     }
 }
