@@ -8,7 +8,7 @@ public class p81 {
 
         int l=0,r=R;
         while(l<r){
-            int mid=(l+r)>>1;
+            int mid=(l+r+1)>>1;
             if(nums[mid]>=nums[0]) l=mid;
             else r=mid-1;
         }
