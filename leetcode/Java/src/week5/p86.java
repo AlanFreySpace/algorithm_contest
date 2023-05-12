@@ -4,6 +4,7 @@ import week1.ListNode;
 
 public class p86 {
 	/**
+	 注意这段代码会在链表中形成环路
 	public ListNode partition(ListNode head, int x) {
 	       ListNode small_dummy=new ListNode(-1),big_dummy=new ListNode(-1);
 	       ListNode small_cur=small_dummy,big_cur=big_dummy,cur=head;
