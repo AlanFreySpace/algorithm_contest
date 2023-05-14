@@ -13,8 +13,8 @@ public class p90 {
     }
 
     void dfs(int[] nums,int from,int n){
-        if(from==n) return;
         ans.add(new ArrayList(path));
+        //if(from==n) return;
 
         for(int i=from;i<n;i++){
             path.add(nums[i]);
