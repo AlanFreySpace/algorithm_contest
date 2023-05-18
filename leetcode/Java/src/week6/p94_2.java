@@ -10,13 +10,22 @@ public class p94_2 {
         Stack<TreeNode> sk=new Stack<>();
 
         if(root!=null) sk.push(root);
-        else return ans;
-
-        TreeNode cur=null;
+        
         while(!sk.empty()){
             while(sk.peek().left!=null){
-                cur=
+                TreeNode tmp=sk.peek().left;
+                sk.peek().left=null;
+                sk.push(tmp);
+            }
+            TreeNode cur=sk.peek();
+            System.out.println(cur.val);
+            ans.add(cur.val);
+            sk.pop();
+            if(cur.right!=null){
+                sk.push(cur.right);
             }
         }
+
+        return ans;
     }
 }
