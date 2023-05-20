@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class p94_2 {
+	// 这种迭代方式会破坏原树的结构 不推荐
 	public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> ans=new ArrayList<>();
         Stack<TreeNode> sk=new Stack<>();
