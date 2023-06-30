@@ -1,6 +1,7 @@
 package week6;
 
-public class p101 {
+public class p101_1 {
+	// 方法一:递归
 	public boolean isSymmetric(TreeNode root) {
         return dfs(root.left,root.right);
     }
