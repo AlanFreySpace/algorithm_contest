@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // 空间复杂度仅为O(1)
     int minimumTotal(vector<vector<int>>& triangle) {
         for (int i = triangle.size() - 2; i >= 0; i--) {
             for (int j = 0; j < triangle[i].size(); j++) {
