@@ -15,26 +15,30 @@ public:
         : val(_val), left(_left), right(_right), next(_next) {}
 };
 */
+
 class Solution {
 public:
     Node* connect(Node* root) {
-        if (!root) {
-            return NULL;
-        }
-
-        Node* first = root;// 每层的起始节点
-        while (first->left) {
-            Node* p = first;// 对每层的各节点进行遍历
+        Node* p = root;
+        while (p) {
+            /*
+            dummy: 当前正在遍历层级的哨兵节点
+            tail: 遍历到的尾节点
+            */
+            Node* dummy = new Node(), * tail = dummy;
             while (p) {
-                p->left->next = p->right;
-                if (p->next) {
-                    p->right->next = p->next->left;
+                if (p->left) {
+                    tail->next = p->left;
+                    tail = p->left;
+                }
+                if (p->right) {
+                    tail->next = p->right;
+                    tail = p->right;
                 }
                 p = p->next;
             }
-            first = first->left;
+            p = dummy->next;
         }
-
         return root;
     }
 };
