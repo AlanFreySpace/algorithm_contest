@@ -2,7 +2,7 @@ class Solution {
 public:
     unordered_set<string> s;
     unordered_map<string, int> dist;// beginWord到各节点的最短距离
-    queue<string> q;
+    queue<string> q;// 注意这里声明的是一个队列,用队列进行bfs
     vector<string> path;
     vector<vector<string>> ans;
     string firstWord;
@@ -21,8 +21,8 @@ public:
         bool endFlag = false;// 表示是否已经找到一条到endWord的路径
 
         while (!q.empty() && !endFlag) {
-            string t = q.front(); // 返回栈顶元素
-            q.pop();
+            string t = q.front(); // 返回队列的第一个元素
+            q.pop();// 删除队列中的第一个元素
 
             string r = t;
             // bfs,构建单词之间的关系图,得到beginWord到endWord的最短距离
