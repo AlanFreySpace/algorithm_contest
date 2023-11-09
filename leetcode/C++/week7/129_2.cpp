@@ -9,31 +9,25 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-/**
-* 方法一:采用恢复现场的写法,这种写法较麻烦
-*/
 class Solution {
 public:
-    int ans = 0, path = 0;
+    int ans = 0;
 
     int sumNumbers(TreeNode* root) {
-        dfs(root);
+        dfs(root, 0);
         return ans;
     }
 
-    void dfs(TreeNode* root) {
+    void dfs(TreeNode* root, int path) {
         path = path * 10 + root->val;
-        if (!root->left && !root->right) {
-            ans += path;
-            return;
-        }
         if (root->left) {
-            dfs(root->left);
-            path = (path - root->left->val) / 10;// 恢复现场
+            dfs(root->left, path);
         }
         if (root->right) {
-            dfs(root->right);
-            path = (path - root->right->val) / 10;// 恢复现场
+            dfs(root->right, path);
+        }
+        if (!root->left && !root->right) {
+            ans += path;
         }
     }
 };
