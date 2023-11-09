@@ -19,6 +19,7 @@ public:
     }
 
     void dfs(TreeNode* root, int path) {
+        // path代表在当前节点处的数字
         path = path * 10 + root->val;
         if (root->left) {
             dfs(root->left, path);
@@ -26,6 +27,7 @@ public:
         if (root->right) {
             dfs(root->right, path);
         }
+        // 到达叶节点
         if (!root->left && !root->right) {
             ans += path;
         }

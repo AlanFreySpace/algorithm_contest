@@ -23,6 +23,7 @@ public:
 
     void dfs(TreeNode* root) {
         path = path * 10 + root->val;
+        // 到达叶节点
         if (!root->left && !root->right) {
             ans += path;
             return;
