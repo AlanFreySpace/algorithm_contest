@@ -5,6 +5,9 @@ public:
     vector<string> path;
     int n;
 
+    /**
+    * f[i][j]:表示s[i..j]是否是回文串
+    */
     vector<vector<string>> partition(string s) {
         n = s.length();
         f = vector(n, vector<bool>(n));
