@@ -27,7 +27,8 @@ public:
         dfs(0, s);
         return ans;
     }
-
+    
+    // from:递归搜索当前处理到的位置
     void dfs(int from, string& s) {
         if (from == s.size()) {
             ans.push_back(path);
