@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 // Definition for a Node.
 class Node {
 public:
@@ -28,9 +28,9 @@ public:
             return NULL;
         }
 
-        dfs(node);// ¸´ÖÆµã
+        dfs(node);// å¤åˆ¶ç‚¹
 
-        for (auto [node, newNode] : hash) { //¸´ÖÆÁÚ±ß
+        for (auto [node, newNode] : hash) { //å¤åˆ¶é‚»è¾¹
             for (Node* neighbor : node->neighbors) {
                 newNode->neighbors.push_back(hash[neighbor]);
             }
