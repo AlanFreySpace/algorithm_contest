@@ -1,12 +1,12 @@
-class Solution {
+锘縞lass Solution {
 public:
     vector<vector<bool>> f;
     vector<vector<string>> ans;
     vector<string> path;
     int n;
 
-    /**
-    * f[i][j]:表示s[i..j]是否是回文串
+    /** 
+    * f[i][j]:琛ㄧずs[i..j]鏄惁鏄洖鏂囦覆
     */
     vector<vector<string>> partition(string s) {
         n = s.length();
@@ -28,7 +28,7 @@ public:
         return ans;
     }
     
-    // from:递归搜索当前处理到的位置
+    // from:閫掑綊鎼滅储褰撳墠澶勭悊鍒扮殑浣嶇疆
     void dfs(int from, string& s) {
         if (from == s.size()) {
             ans.push_back(path);
