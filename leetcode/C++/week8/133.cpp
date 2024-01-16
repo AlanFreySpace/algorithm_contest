@@ -1,4 +1,4 @@
-﻿/*
+/*
 // Definition for a Node.
 class Node {
 public:
