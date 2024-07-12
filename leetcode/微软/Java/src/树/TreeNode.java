@@ -1,4 +1,4 @@
-package 哈希表;
+package 树;
 
 
 public class TreeNode {
