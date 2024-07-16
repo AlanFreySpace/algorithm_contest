@@ -23,7 +23,7 @@ public:
 
         auto cur = head;
 
-        while (cur) {
+        while (cur) { // 复制一个小弟
             auto tmp = new Node(cur->val);
             tmp->next = cur->next;
             cur->next = tmp;
@@ -33,7 +33,7 @@ public:
         cur = head;
         auto ans = head->next;
 
-        while (cur) {
+        while (cur) { // 复制random指针
             auto newCur = cur->next;
             if (cur->random) {
                 newCur->random = cur->random->next;
@@ -42,7 +42,7 @@ public:
         }
 
         cur = head;
-        while (cur) {
+        while (cur) { // 拆分两个链表
             auto newCur = cur->next, oriNext = newCur->next;
             cur->next = oriNext;
             if (oriNext) {
