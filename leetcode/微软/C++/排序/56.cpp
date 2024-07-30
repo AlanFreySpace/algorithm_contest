@@ -12,15 +12,15 @@ public:
 
         int l = intervals[0][0], r = intervals[0][1];
         for (int i = 1; i < intervals.size(); i++) {
-            if (intervals[i][0] > r) {
+            if (intervals[i][0] > r) { //区间不重叠 更新答案
                 ans.push_back({ l,r });
                 l = intervals[i][0], r = intervals[i][1];
             }
-            else {
+            else { //区间重叠 更新右侧端点
                 r = max(r, intervals[i][1]);
             }
         }
-        ans.push_back({ l,r });
+        ans.push_back({ l,r }); //最后一个区间
 
         return ans;
     }
