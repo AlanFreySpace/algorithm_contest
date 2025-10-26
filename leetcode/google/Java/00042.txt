@@ -22,3 +22,47 @@
         }
         return ans;
     }
+
+方法二：双指针(对方法一的改进，将空间复杂度降到O(1))
+    public int trap(int[] height) {
+        int left=0, right=height.length-1;
+        int leftMax=0, rightMax=0, ans=0;
+
+        while(left<right) {
+            leftMax = Math.max(leftMax,height[left]);
+            rightMax = Math.max(rightMax,height[right]);
+
+            if(leftMax<rightMax) {
+                ans += leftMax-height[left];
+                left++;
+            } else {
+                ans += rightMax-height[right];
+                right--;
+            }
+        }
+
+        return ans;
+    }
+
+方法三：单调栈，由于用到了栈容器，实际运行速度会比上面两种慢
+    public int trap(int[] height) {
+        Stack<Integer> sk = new Stack<>();
+        int ans = 0;
+
+        for(int i=0; i<height.length; i++) {
+            while(!sk.empty() && height[sk.peek()]<height[i]) {
+                int top = sk.pop();
+                if(sk.empty()) {
+                    break;
+                }
+
+                int left = sk.peek();
+                int curWidth = i-left-1, curHeight = Math.min(height[i],height[left])-height[top];
+                ans += curWidth*curHeight;
+            }
+
+            sk.push(i);
+        }
+
+        return ans;
+    }
