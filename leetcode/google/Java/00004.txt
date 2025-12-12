@@ -87,7 +87,7 @@ class Solution {
             if(nums1_im1<=nums2_j) {
                 median1 = Math.max(nums1_im1, nums2_jm1);
                 median2 = Math.min(nums1_i, nums2_j);
-                left = i+1;
+                left = i+1;   //找到最大的满足条件的i
             } else {
                 right = i-1;
             }
