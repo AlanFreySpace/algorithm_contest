@@ -1,0 +1,32 @@
+思路一：横向扫描
+实现一：使用charAt
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if(strs==null || strs.length==0) {
+            return "";
+        }
+
+        String ans = strs[0];
+
+        for(int i=1; i<strs.length; i++) {
+            for(int j=0; j<ans.length(); j++) {
+                if(j<strs[i].length()) {
+                    if(strs[i].charAt(j)!=ans.charAt(j)) {
+                        ans = ans.substring(0,j);
+                        break;
+                    }
+                } else {
+                    ans = ans.substring(0,j);
+                }
+
+                if(ans.isEmpty()) {
+                    return ans;
+                }
+            }
+        }
+
+        return ans;
+    }
+}
+
+实现2：使用
