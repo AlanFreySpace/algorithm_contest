@@ -1,0 +1,30 @@
+class Solution {
+    public boolean isValid(String s) {
+        int len=s.length();
+        if(len%2 == 1) {
+            return false;
+        }
+
+
+        Map<Character,Character> pairs = new HashMap<>(Map.of(
+            ')','(',
+            '}','{',
+            ']','['
+        ));
+        Deque<Character> stack = new ArrayDeque<>();
+
+        for(int i=0; i<len; i++) {
+            char ch = s.charAt(i);
+            if(pairs.containsKey(ch)) {
+                if(stack.isEmpty() || stack.peek() != pairs.get(ch)) {
+                    return false;
+                }
+                stack.pop();
+            } else {
+                stack.push(ch);
+            }
+        }
+
+        return stack.isEmpty();
+    }
+}
