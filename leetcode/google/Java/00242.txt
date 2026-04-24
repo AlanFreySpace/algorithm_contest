@@ -1,0 +1,141 @@
+//解法一
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length()) {
+            return false;
+        }
+
+        char[] str1 = s.toCharArray();
+        char[] str2 = t.toCharArray();
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+        return Arrays.equals(str1,str2);
+    }
+}
+
+//解法二
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length()) {
+            return false;
+        }
+
+        int[] table = new int[26];
+        for(int i=0; i<s.length(); i++) {
+            table[s.charAt(i)-'a']++;
+        }
+
+        for(int i=0; i<t.length(); i++) {
+            table[t.charAt(i)-'a']--;
+            if(table[t.charAt(i)-'a']<0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+//解法三
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length()) {
+            return false;
+        }
+
+        HashMap<Character, Integer> table = new HashMap<>();
+        for(int i=0; i<s.length(); i++) {
+            char ch = s.charAt(i);
+            table.put(ch, table.getOrDefault(ch, 0)+1);
+        }
+
+        for(int i=0; i<t.length(); i++) {
+            char ch = t.charAt(i);
+            table.put(ch, table.getOrDefault(ch, 0)-1);
+            if(table.get(ch)<0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+//解法四
+import java.text.Normalizer;
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        s = Normalizer.normalize(s, Normalizer.Form.NFC);
+        t = Normalizer.normalize(t, Normalizer.Form.NFC);
+
+        if(s.length() != t.length()) {
+            return false;
+        }
+
+        int[] sPoints = s.codePoints().sorted().toArray();
+        int[] tPoints = t.codePoints().sorted().toArray();
+
+        return Arrays.equals(sPoints, tPoints);
+    }
+}
+
+//解法五
+import java.text.Normalizer;
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        s = Normalizer.normalize(s, Normalizer.Form.NFC);
+        t = Normalizer.normalize(t, Normalizer.Form.NFC);
+
+        if(s.length()!=t.length()) {
+            return false;
+        }
+
+        HashMap<Integer, Integer> table = new HashMap<>();
+        s.codePoints().forEach(codePoint ->
+            table.put(codePoint, table.getOrDefault(codePoint, 0)+1)
+        );
+
+        for(int tPoint: t.codePoints().toArray()) {
+            table.put(tPoint, table.getOrDefault(tPoint, 0)-1);
+            if(table.get(tPoint)<0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+
+//解法六
+import java.text.Normalizer;
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        s = Normalizer.normalize(s, Normalizer.Form.NFC);
+        t = Normalizer.normalize(t, Normalizer.Form.NFC);
+
+        if(s.length() != t.length()) {
+            return false;
+        }
+
+        HashMap<Integer, Integer> table = new HashMap<>();
+        for(int i=0; i<s.length();) {
+            int codePoint = s.codePointAt(i);
+            table.put(codePoint, table.getOrDefault(codePoint,0)+1);
+            i += Character.charCount(codePoint);
+        }
+
+        for(int i=0; i<t.length();) {
+            int codePoint = t.codePointAt(i);
+            table.put(codePoint, table.getOrDefault(codePoint,0)-1);
+            if(table.get(codePoint)<0) {
+                return false;
+            }
+            i += Character.charCount(codePoint);
+        }
+
+        return true;
+    }
+}
